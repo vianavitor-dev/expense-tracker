@@ -32,7 +32,7 @@ func NewExpense(date string, desc string, amount float64) *Expense {
 
 func (e *Expense) Create() error {
 
-	file, err := os.OpenFile(pathName+".json", os.O_RDONLY, os.ModePerm)
+	file, err := os.OpenFile(pathName+".json", os.O_CREATE, os.ModePerm)
 	if err != nil {
 		log.Fatal(err)
 	}
